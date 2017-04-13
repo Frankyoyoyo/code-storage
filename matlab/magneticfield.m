@@ -16,7 +16,7 @@ dbz=a*(a-Y.*sin(T))./r3;
 bz=pi/40*trapz(dbz,3);          %B的z分量
 
 figure(1)
-[bSY,bSZ]=meshgrid([0:0.05:0.2],0);
+[bSY,bSZ]=meshgrid([-0.2:0.05:0.2],0);
 h1=streamline(Y(:,:,1),Z(:,:,1),by,bz,bSY,bSZ,[0.1,1000]);
 h2=copyobj(h1,gca);
 
@@ -32,7 +32,7 @@ for kk=1:4            %曲率较大的场线要取不同的步长
 end
 
 
-%以下画三维图形
+% %以下画三维图形
 [X,Y,Z]=meshgrid(-0.5:0.04:0.5);
 r2=X.^2+Y.^2+Z.^2;
 for k=1:81
