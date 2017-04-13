@@ -52,6 +52,7 @@ v=[-0.2,-0.1,0,0.1,0.2];
 [Vx,Vy,Vz]=meshgrid(v,v,0);
 plot3(Vx(:),Vy(:),Vz(:),'r*')
 streamline(X,Y,Z,Bx,By,Bz,Vx,Vy,Vz,[0.01,2000]);
+streamline(X,Y,Z,-Bx,-By,-Bz,Vx,Vy,Vz,[0.01,2000]);
 hold on;
 axis([-0.5,0.5,-0.5,0.5,-0.5,0.5]);
 view(-23,26);
