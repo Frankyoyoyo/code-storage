@@ -31,3 +31,4 @@ plot(a*exp(i*t),'r-','LineWidth',3);
 
 %µ» ∆√Ê£∫
 
+
