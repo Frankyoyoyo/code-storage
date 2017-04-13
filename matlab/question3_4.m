@@ -12,23 +12,24 @@ for k=1:81
     Ey0(:,:,:,k)=a*Z*sinth./R3;
     Ez0(:,:,:,k)=a*(a-X*costh-Y*sinth)./R3;
 end
-Ex=pi/40*trapz(Ex0,4);
+Ex=pi/40*trapz(Ex0,4)
 Ey=pi/40*trapz(Ey0,4);
-Ez=pi/40*trapz(Ez0,4);
+Ez=pi/40*trapz(Ez0,4);          %三个方向的电场强度
 
+Ex(1,1,1)
 
-v=[-0.2,-0.1,0,0.1,0.2];
-[Vx,Vy,Vz]=meshgrid(v,v,0);
-plot3(Vx(:),Vy(:),Vz(:),'r*')
-streamline(X,Y,Z,Ex,Ey,Ez,Vx,Vy,Vz,[0.01,2000]);
-streamline(X,Y,Z,-Ex,-Ey,-Ez,Vx,Vy,Vz,[0.01,2000]);
-hold on;
-axis([-0.5,0.5,-0.5,0.5,-0.5,0.5]);
-view(-23,26);
-box on;
-t=0:pi/100:2*pi;
-plot(a*exp(i*t),'r-','LineWidth',3);
-
-%等势面：
-
+% 
+% v=[-0.2,-0.1,0,0.1,0.2];
+% [Vx,Vy,Vz]=meshgrid(v,v,0);
+% plot3(Vx(:),Vy(:),Vz(:),'r*')
+% streamline(X,Y,Z,Ex,Ey,Ez,Vx,Vy,Vz,[0.01,2000]);
+% streamline(X,Y,Z,-Ex,-Ey,-Ez,Vx,Vy,Vz,[0.01,2000]);
+% hold on;
+% axis([-0.5,0.5,-0.5,0.5,-0.5,0.5]);
+% view(-23,26);
+% box on;
+% t=0:pi/100:2*pi;
+% plot(a*exp(i*t),'r-','LineWidth',3);
+% 
+% %等势面：
 
