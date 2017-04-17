@@ -34,17 +34,36 @@
 % 
 % %等势面：
 
+% the=0:pi/20:pi;
+% R=1;
+% y=-1:0.04:1; 
+% z=-1:0.04:1;
+% [Y,Z]=meshgrid(y,z);
+% 
+% for i=1:100
+%     phi=pi/40*(i-1);
+%     costh=cos(phi);
+%     sinth=sin(phi);
+%     du(:,:,i)=R./sqrt((-R*costh).^2+(Y-R*sinth).^2+Z.^2);
+% end
+% U=trapz(du,3)
+% mesh(Y,Z,U)
+% U=peaks;
+% contour(peaks)        %用contour画平面等值线
+% R=peaks;
+% [c,h]=contourf(R);    %给二维图填涂上颜色
+% clabel(c,h);
+% colorbar
+% axis auto
+
+
 %二维电势图
 the=0:pi/20:pi;
 R=1;
 y=-1:0.04:1; 
 z=-1:0.04:1;
-[Y,Z,T]=meshgrid(y,z,the);
-du=R./sqrt((-R*cos(T).^2+(Y-R*sin(T).^2))+Z.^2);
+[Y,Z]=meshgrid(y,z);
+% [Y,Z,T]=meshgrid(y,z,the);
+du=R./sqrt((R*cos(T).^2+(Y-R*sin(T).^2))+Z.^2);
 U=pi/2*trapz(du,3);
-U=peaks;
-contour(peaks)        %用contour画平面等值线
-R=peaks;
-[c,h]=contourf(R);    %给二维图填涂上颜色
-clabel(c,h);
-colorbar
+mesh(Y,Z,U)
