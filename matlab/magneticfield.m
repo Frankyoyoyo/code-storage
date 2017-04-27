@@ -11,9 +11,9 @@ r=sqrt((a*cos(T)).^2+(Y-a*sin(T)).^2+Z.^2);
 r3=r.^3;
 
 dby=a*Z.*sin(T)./r3;
-by=pi/40*trapz(dby,3);          %B的y分量
+by=pi/20*trapz(dby,3);          %B的y分量
 dbz=a*(a-Y.*sin(T))./r3;
-bz=pi/40*trapz(dbz,3);          %B的z分量
+bz=pi/20*trapz(dbz,3);          %B的z分量
 
 figure(1)
 [bSY,bSZ]=meshgrid([-0.2:0.05:0.2],0);
