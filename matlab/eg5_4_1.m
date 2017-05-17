@@ -1,5 +1,6 @@
 function tes
-cc
+clear
+clc
 global m d e
 m=1; b=[0,0.2,0.2]; p=[0,0,1];
 px1=[4.8; 3.8; 3.1];

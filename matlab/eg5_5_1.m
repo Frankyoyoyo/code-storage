@@ -1,4 +1,6 @@
-cc
+clear
+clc
+
 delta = 0.01:-0.001:0.0001
 F=@(t,y)y.^2 - y.^3;
 for i = 1:length(delta)
