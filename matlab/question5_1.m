@@ -16,9 +16,9 @@ for k=1:3
     [x,y]=pol2cart(u(:,3),u(:,1));    %×ø±êÏµ×ª»»
     X=[flipud(x);x];Y=[-flipud(y);y];
     text(-300,-100-(k-1)*300,energy{k});
-%     axis equal
-%     sun=line(0,0,'color','r','marker','.','markersize',20);
-%     comet(X,Y);
+    axis equal
+    sun=line(0,0,'color','r','marker','.','markersize',20);
+    comet(X,Y);
     plot(X,Y)
     hold on
 end
