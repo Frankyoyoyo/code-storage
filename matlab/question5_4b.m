@@ -3,14 +3,15 @@ clear;
 clc;
 
 tstart = 0;
-tfinal = 30;
-tstep = 0.1;
-global m_ball m_block k len
+tfinal = 10;
+tstep = 0.01;
+global m_ball m_block k len g
+g=9.81;
 m_ball = 2;
 m_block = 1;
-k = 30;
-len = 15;
-y0_ball = [25; 0];
+k = 100;
+len = 7;
+y0_ball = [8; 0];
 y0_block = [len; 0];    %³õÖµ
 tout_ball = tstart;
 tout_block = tstart;
@@ -41,13 +42,14 @@ for time = tstart : tstep : (tfinal - tstep)
     end
 end
 hold on
-plot(tout_block, yout_block(:, 1), '-o')
+plot(tout_block, yout_block(:, 1), '-r')
 plot(tout_ball, yout_ball(:, 1), '-b')
 hold off
 end
 
 function ydot = f_ball(t, y)
-ydot = [y(2); - 1 + y(2) ^ 2];
+global g;
+ydot = [y(2); - g];
 end
 
 function ydot = f_block(t, y)
